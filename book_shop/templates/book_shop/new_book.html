@@ -1,0 +1,30 @@
+{% extends 'book_shop/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container col-md-4" style="margin-left: 20%;">
+  <h2 class="mt-3">Добавление новой книги</h2>
+
+  <form method="post" action="{% url 'book_shop:new_book' %}" enctype="multipart/form-data" class="mtz-3">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="{{ form.title.id_for_label }}">Название книги</label>
+      {{ form.title }}
+    </div>
+<!--      <div class="form-group">-->
+<!--        <label-->
+<!--              for="{{ form.image.id_for_label }}"-->
+<!--              class="form-label"-->
+<!--              style="margin-top: 1%;"-->
+<!--              >Выберите обложку</label-->
+<!--            >-->
+<!--        {{ form.image }}-->
+
+<!--      </div>-->
+    <input type="submit" class="btn btn-primary" value="Добавить книгу">
+  </form>
+
+</div>
+{% endblock %}

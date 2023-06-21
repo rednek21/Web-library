@@ -1,0 +1,22 @@
+{% extends 'book_shop/base.html' %}
+
+{% block content %}
+ <div class="container">
+        <div class="jumbotron mt-4">
+            <h1 class="display-4">Ошибка при добавлении книги</h1>
+            <p class="lead">Книга с указанным Вами названием не найдена в Google books.</p>
+            <p class="lead">Убедитесь, что было введено верное название</p>
+            <p>
+                <a href="{% url 'book_shop:index' %}">
+                    Вернуться на главную.
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        setTimeout(function() {
+            window.location.href = "{% url 'book_shop:index' %}";
+        }, 7000); // 10000 миллисекунд = 10 секунд
+    </script>
+{% endblock %}

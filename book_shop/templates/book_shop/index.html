@@ -1,0 +1,30 @@
+{% extends 'book_shop/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<body>
+    <!-- Основной контент с товарами -->
+    <div class="container mt-4">
+        <div class="row">
+            {% for book in books %}
+                <div class="col-md-4">
+                    <div class="card mb-4" style="height: 550px">
+                        {% if book.image %}
+                            <img style="width: 200px; height: 250px; margin: auto;" class="card-img-top" src="{{ book.image.url }}" alt="Обложка книги">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title"><span class="font-weight-bold">{{ book.title }}</span></h5>
+                            <p class="card-text"><span class="font-weight-bold">Автор:</span> {{ book.author }}</p>
+                            <p class="card-text"><span class="font-weight-bold">Категория:</span> {{ book.category }}</p>
+                            <p class="card-text"><span class="font-weight-bold">Издано:</span> {{ book.published_date }}</p>
+                            <p class="card-text"><span class="font-weight-bold">Издательство:</span> {{ book.publisher }}</p>
+                            <a href="{% url 'book_shop:edit_book' book.id %}" class="btn btn-primary">Редакт.</a>
+                            <a href="{% url 'book_shop:delete_book' book.id %}" class="btn btn-danger">Удалить</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

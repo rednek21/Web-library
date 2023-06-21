@@ -1,0 +1,1 @@
+[{"model": "book_shop.category", "pk": 4, "fields": {"name": "Cooking"}}, {"model": "book_shop.category", "pk": 5, "fields": {"name": "England"}}, {"model": "book_shop.category", "pk": 6, "fields": {"name": "Unknown"}}]
