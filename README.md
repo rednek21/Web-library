@@ -11,7 +11,7 @@ If a new image for the book is received on request, it will be used as a cover a
 
 So, here you can see how to run the app:
 1. Create your virtual environment
-2. Create you database. If you want to use database different from PostgreSQL, edit the appropriate fields in settings.py
+2. Create your database. If you want to use database different from PostgreSQL, edit the appropriate fields in settings.py
 3. Create ".env" file in the project root folder. Then edit it using your own data
 4. pip install -r requirements.txt
 5. python3 manage.py runserver
